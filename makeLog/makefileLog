@@ -1,0 +1,18 @@
+# this rule will merge the Transaction Log and the Error Log
+#   files into a single Master Log file
+logMaster.txt: logTransaction.txt logError.txt
+	date >> logMaster.txt
+	cat logTransaction.txt logError.txt >> logMaster.txt
+	rm logTransaction.txt logError.txt
+	touch logTransaction.txt logError.txt
+	touch logMaster.txt
+
+# this rule will simulate the program that creates
+#   error log entries
+error:
+	echo Error 123 >> logError.txt
+
+# this rule will simulate the program that creates
+#   transaction log entries
+trans:
+	echo Trans 456 >> logTransaction.txt

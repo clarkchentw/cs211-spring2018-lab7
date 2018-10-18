@@ -1,0 +1,25 @@
+fries:  potato   oil   salt
+	# make fries
+	echo "using fryer to make fries"
+	touch fries
+	rm potato
+	rm salt
+
+shopping: potato  oil  salt
+	echo "Buy supplies"
+
+potato:
+	echo "Go to store and buy potatoes"
+	touch potato
+
+oil:
+	echo "Go to store and buy oil"
+	touch oil
+
+salt:
+	echo "Go to store and buy salt"
+	touch salt
+
+eat:	
+	rm fries	
+	
